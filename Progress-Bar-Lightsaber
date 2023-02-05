@@ -1,0 +1,64 @@
+/* ==UserStyle==
+@name           YouTube - Lightsaber Progress Bar
+@namespace      https://
+@version        1.0.0
+@license        GPLv3
+@description    Light Saber Progress Bar
+@author         Tsyron
+@preprocessor   stylus
+/*@var            select select-color "Colours" ["Red", "Green", "Blue", "Purple", "Yellow", "White", "Orange"]*/
+/*==/UserStyle== */
+@-moz-document domain("youtube.com"),
+regexp("http(s?)://[^/]*\\.youtube(\\.com)?(\\.[a-z][a-z])?/.*"),
+regexp("http(s?)://youtube(\\.com)?(\\.[a-z][a-z])?/.*") {
+    :root {
+        --Shadow: #fff2f2;
+        if select-color=="Red" {
+            --Color: #EB212E;
+        }
+        if select-color=="Green" {
+            --Color: #46eb21;
+        }
+        if select-color=="Blue" {
+            --Color: #2b21eb;
+        }
+        if select-color=="Purple" {
+            --Color: #b921eb;
+        }
+        if select-color=="Yellow" {
+            --Color: #e4eb21;
+        }
+        if select-color=="White" {
+            --Color: #fff2f2;
+        }
+        if select-color=="Orange" {
+            --Color: #eb6e21;
+        }
+    }
+    /* Progress Bar */
+    .ytp-swatch-background-color {
+        background-color: var(--Shadow);
+        box-shadow: 0 0 9px 3px var(--Color);
+    }
+    /* Volume Slider */
+    .ytp-volume-slider-handle {
+        border-radius: 7px;
+        margin-top: -6px;
+        background-color: var(--Shadow);
+        box-shadow: 0 0 12px 5px var(--Color);
+    }
+    /* Autoplay */
+    .ytp-autonav-toggle-button[aria-checked=true]:after {
+        background-color: var(--Color);
+        box-shadow: 0px 0px 6px 2px var(--Color);
+    }
+    /* Subtitles Underline */
+    .ytp-chrome-controls .ytp-button[aria-pressed]:after {
+        background-color: var(--Shadow);
+        box-shadow: 0 0 9px 3px var(--Color);
+    }
+    /* Settings: Toggle */
+    .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox {
+        /*toggle button2*/
+        background: var(--Shadow);
+        box-shadow: 0 0 10px 5px var(--Color); } }
