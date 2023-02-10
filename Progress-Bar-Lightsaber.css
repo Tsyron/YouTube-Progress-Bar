@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           YouTube - Lightsaber Progress Bar
 @namespace      https://github.com/Tsyron/YouTube-Progress-Bar
-@version        1.0.2
+@version        1.0.3
 @license        GPLv3
 @description    Light Saber Progress Bar
 @author         Tsyron
@@ -12,63 +12,66 @@
 regexp("http(s?)://[^/]*\\.youtube(\\.com)?(\\.[a-z][a-z])?/.*"),
 regexp("http(s?)://youtube(\\.com)?(\\.[a-z][a-z])?/.*") {
     :root {
-        
+
         --White: #fff2f2;
         if select-color=="Red" {
             --Color: #EB212E; }
-            
+
         if select-color=="Green" {
             --Color: #46eb21; }
-            
+
         if select-color=="Blue" {
             --Color: #2b21eb; }
-            
+
         if select-color=="Purple" {
             --Color: #b921eb; }
-            
+
         if select-color=="Yellow" {
             --Color: #e4eb21; }
-            
+
         if select-color=="White" {
             --Color: #fff2f2; }
-            
+
         if select-color=="Orange" {
             --Color: #eb6e21; } }
-            
+
     /* Progress Bar */
     .ytp-swatch-background-color {
         background-color: var(--White);
         box-shadow: 0 0 9px 3px var(--Color); }
-        
+
     /* Volume Slider */
     .ytp-volume-slider-handle {
         border-radius: 7px;
         margin-top: -6px;
         background-color: var(--White);
         box-shadow: 0 0 10px 4px var(--Color); }
-        
+
     .ytp-volume-slider-track,
     .ytp-volume-slider-handle:before {
         background-color: var(--White);
         box-shadow: 0 0 3px 2px var(--Color);
         z-index: -117; }
-        
+
     /* Autoplay */
     .ytp-autonav-toggle-button[aria-checked=true]:after {
         background-color: var(--Color);
         box-shadow: 0px 0px 6px 2px var(--Color); }
-        
+
     /* Subtitles Underline */
     .ytp-chrome-controls .ytp-button[aria-pressed]:after {
         background-color: var(--White);
         box-shadow: 0 0 9px 3px var(--Color); }
-        
-        .ytp-live-badge[disabled]::before {
-            background-color: var(--White);
-        box-shadow: 0 0 9px 3px var(--Color);
-        }
-        
+
+    .ytp-live-badge[disabled]::before {
+        background-color: var(--White);
+        box-shadow: 0 0 9px 3px var(--Color); }
+
     /* Settings: Toggles */
     .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox {
         background: var(--White);
-        box-shadow: 0 0 9px 3px var(--Color); } }
+        box-shadow: 0 0 9px 3px var(--Color); }
+
+    /* Shorts Progress Bar */
+    html:not(.style-scope) {
+        --yt-spec-static-brand-red: var(--Color) !important; } }
