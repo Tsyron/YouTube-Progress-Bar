@@ -1,12 +1,22 @@
 /* ==UserStyle==
 @name           YouTube - Lightsaber Progress Bar
 @namespace      https://github.com/Tsyron/YouTube-Progress-Bar
-@version        1.0.3
+@version        1.0.4
 @license        GPLv3
 @description    Light Saber Progress Bar
 @author         Tsyron
 @preprocessor   stylus
-/*@var            select select-color "Colours" ["Red", "Green", "Blue", "Purple", "Yellow", "White", "Orange"]*/
+
+@var            select select-color "Colours" {
+    "Red":          "Red",
+    "Green":        "Green",
+    "Blue":         "Blue",
+    "Light Blue":   "LightBlue",
+    "Purple":       "Purple",
+    "Yellow":        "Yellow",
+    "White":        "White",
+    "Orange":       "Orange" }
+
 /*==/UserStyle== */
 @-moz-document domain("youtube.com"),
 regexp("http(s?)://[^/]*\\.youtube(\\.com)?(\\.[a-z][a-z])?/.*"),
@@ -22,6 +32,9 @@ regexp("http(s?)://youtube(\\.com)?(\\.[a-z][a-z])?/.*") {
 
         if select-color=="Blue" {
             --Color: #2b21eb; }
+
+        if select-color=="LightBlue" {
+            --Color: #21ebcd; }
 
         if select-color=="Purple" {
             --Color: #b921eb; }
@@ -63,9 +76,10 @@ regexp("http(s?)://youtube(\\.com)?(\\.[a-z][a-z])?/.*") {
         background-color: var(--White);
         box-shadow: 0 0 9px 3px var(--Color); }
 
+    /* Live */
     .ytp-live-badge[disabled]::before {
         background-color: var(--White);
-        box-shadow: 0 0 9px 3px var(--Color); }
+        box-shadow: 0 0 9px 2.5px var(--Color); }
 
     /* Settings: Toggles */
     .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox {
